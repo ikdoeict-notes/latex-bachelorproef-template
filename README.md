@@ -1,2 +1,2 @@
-# latex-bachelorproef-template
-Bachelorproef  LaTeX template voor Odisee
+# Bachelorproef template
+> LaTeX template voor Odisee
