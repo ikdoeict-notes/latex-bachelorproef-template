@@ -2,17 +2,26 @@
 \begin{document}
 
 \include{titlepage}
+
+% TOC
 \setcounter{tocdepth}{2}
 \tableofcontents
+% end TOC
 
 \newpage
 
-\include{missie-en-visie}
+% main content
+\include{chapters/missie-en-visie}
+% end main content
 
 \newpage
+
+% references
 \nocite{*}
-\bibliography{ref}
+\bibliography{references}
 \bibliographystyle{ieeetr}
-\include{bijlagen}
+% end references
+
+\include{chapters/bijlagen}
 
 \end{document}
