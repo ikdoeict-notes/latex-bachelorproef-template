@@ -26,6 +26,7 @@
 *.out
 *.synctex.gz
 *.pdf
+*.vscodeLog
 
 .swp
 .DS_Store
