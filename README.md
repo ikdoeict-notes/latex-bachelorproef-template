@@ -1,9 +1,9 @@
 # Bachelorproef template
-> Bachelorproef template voor Odisee in LaTeX
+> LaTeX Bachelorproef template voor Odisee
 
-## Download
+## Voorbeeld
 
-Binnenkort vanaf gh release
+[bachelorproef.pdf](https://github.com/ikdoeict-notes/latex-bachelorproef-template/releases/download/0.1.0/bachelorproef.pdf)
 
 ## Credits
 
