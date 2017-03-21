@@ -4,20 +4,32 @@
 
 \include{titlepage}
 
+\include{chapters/abstract}
+
+\include{chapters/woord-vooraf}
+
 % TOC
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 % end TOC
+
+\include{chapters/lijst-afkortingen}
 
 \newpage
 
 % main content
-\include{chapters/hoofdstuk}
+\include{chapters/voorstelling}
+\include{chapters/opdracht}
+\include{chapters/actieplan}
+\include{chapters/voorstudie}
+\include{chapters/uitwerking}
+\include{chapters/besluit}
 % end main content
 
 \newpage
 
 % references
+\addcontentsline{toc}{section}{Referenties}
 \bibliographystyle{ieeetr}
 \bibliography{references}
 % end references

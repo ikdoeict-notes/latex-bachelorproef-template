@@ -1,0 +1,35 @@
+% !TEX root = ./main.tex
+
+\section{Technische uitwerking} % (fold)
+\label{sec:uitwerking}
+
+\subsection{Ondertitel} % (fold)
+\label{sub:ondertitel}
+
+\lipsum[1]
+
+\begin{figure}[H]
+  \label{figure:golden-circle}
+  \centering
+  \includegraphics[width=0.5\textwidth]{logo.pdf}
+  \caption{Figuur met referentie en bijschrift \cite{voorbeeld-ref}}
+\end{figure}
+
+\begin{lstlisting}[caption={Some Javascript code},label={lst:label}]
+// Hello.js
+
+const message = 'Hello';
+const numbers = [1, 2, 3];
+
+numbers
+  .map(n => `${message} ${n}`)
+  .forEach(n => console.log(n));
+
+// Hello 1
+// Hello 2
+// Hello 3
+\end{lstlisting}
+
+Zie codefragment~\ref{lst:label}
+
+\lipsum[1]
