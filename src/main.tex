@@ -2,20 +2,31 @@
 
 \begin{document}
 
-\include{titlepage}
+% \include{titlepage}
 
-\include{chapters/abstract}
+\includepdf{voorblad.pdf}
+
+\newpage\null\thispagestyle{empty}\newpage
+
+\includepdf{voorblad.pdf}
+
+\includepdf{gegevens.pdf}
+
+\setcounter{page}{1}
+\addtocontents{toc}{\protect\renewcommand{\protect\numberline}[1]{}}
+\includepdf[pagecommand={}, addtotoc={1,chapter,1,Abstract,abstract}]{abstract.pdf}
+\addtocontents{toc}{\let\protect\numberline\protect\oldnumberline}
 
 \include{chapters/woord-vooraf}
 
-% TOC
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
+\addcontentsline{toc}{chapter}{Inhoudsopgave}
 \tableofcontents
-% end TOC
 
 \include{chapters/lijst-afkortingen}
 
 \newpage
+\setcounter{chapter}{0}
 
 % main content
 \include{chapters/voorstelling}
@@ -29,10 +40,16 @@
 \newpage
 
 % references
-\addcontentsline{toc}{section}{Referenties}
-\bibliographystyle{ieeetr}
-\bibliography{references}
+\addcontentsline{toc}{chapter}{Referenties}
+\printbibliography[title={Referenties},keyword={ref}]
 % end references
+
+\newpage
+
+% bibliography
+\addcontentsline{toc}{chapter}{Bibliographie}
+\printbibliography[keyword={bib}]
+% end bibliography
 
 \include{chapters/bijlagen}
 
