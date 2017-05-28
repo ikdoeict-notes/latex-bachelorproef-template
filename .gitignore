@@ -25,7 +25,7 @@
 *.mtc1
 *.out
 *.synctex.gz
-*.pdf
+main.pdf
 *.vscodeLog
 
 .swp

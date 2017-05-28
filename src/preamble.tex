@@ -1,12 +1,12 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[dutch]{babel}
-\usepackage{siunitx,amsmath, epic, eepic, float, subfig, amsfonts, color, amsthm, textcomp, microtype, fullpage}
+\usepackage{siunitx,amsmath, epic, eepic, float, subfig, amsfonts, color, amsthm, textcomp, microtype, fullpage, csquotes}
 \usepackage[parfill]{parskip}
 \usepackage[pdftex]{graphicx}
 \graphicspath{{./assets/}}
-\usepackage[titletoc,title]{appendix}
+\usepackage[titletoc,title,page]{appendix}
 \usepackage{standalone}
 \usepackage{array}
 \usepackage{tikz}
@@ -17,6 +17,7 @@
 \definecolor{bluekeywords}{rgb}{0.13,0.13,1}
 \definecolor{greencomments}{rgb}{0,0.5,0}
 \definecolor{redstrings}{rgb}{0.9,0,0}
+\definecolor{light-gray}{gray}{0.95}
 \usepackage[font=small,format=plain,labelfont=bf,textfont=it]{caption}
 \usepackage[linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
 \hypersetup{colorlinks=true}
@@ -31,19 +32,38 @@
 \tabulinesep=1.2mm
 \renewcommand*{\familydefault}{\sfdefault}
 \renewcommand\arraystretch{1.7}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
 \usepackage{multirow}
 \usepackage{abstract}
+\usepackage[style=ieee,backend=biber,urldate=iso8601,date=iso8601]{biblatex}
+\renewbibmacro*{bbx:savehash}{}
+\addbibresource{references.bib}
 \renewcommand{\abstractnamefont}{\normalfont\large\bfseries}
 \makeatletter
 \newcommand{\tocfill}{\cleaders\hbox{$\m@th \mkern\@dotsep mu . \mkern\@dotsep mu$}\hfill}
 \makeatother
 \newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \tocfill}}
-\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}%
-                                              \setlength{\itemsep}{0pt}}}{\end{list}}
+\newenvironment{abbreviations}{
+	\begin{list}{}{
+			\renewcommand{\makelabel}{\abbrlabel}
+			\setlength{\itemsep}{0pt}
+		}}{\end{list}
+}
+
+\usepackage{longtable}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+
+\usepackage{titlesec}
+\titleformat{\chapter}
+{\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\let\oldnumberline\numberline
 
 \usepackage{listings}
 \lstdefinelanguage{JavaScript}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, let, const, if, in, while, do, else, case, break},
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, let, const, if, in, while, do, else, case, break, async, await},
   keywordstyle=\color{blue}\bfseries,
   ndkeywords={class, export, boolean, throw, implements, import, this},
   ndkeywordstyle=\color{darkgray}\bfseries,
